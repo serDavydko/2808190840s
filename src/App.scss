@@ -330,10 +330,12 @@ table {
 @media (max-width: 400px) {
   .CommentsBlock {
     flex-direction: column;
-    line-height: 28px;
   }
-  .like-count,
+  .like-count {
+    margin-left: 16px;
+    margin-top: 10px;
+  }
   .comment-count {
-    padding-top: 20px;
+    margin-top: 10px;
   }
 }
