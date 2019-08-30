@@ -1,28 +1,50 @@
-import React from 'react';
+import React from "react";
 
 class CreateComment extends React.Component {
   state = {
-    value: '',
+    value: ""
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({
-      value: event.target.value,
+      value: event.target.value
+    });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    this.props.addComment(this.state.value);
+    this.setState({
+      value: ""
     });
   };
 
   render() {
     const { value } = this.state;
-    const { handleFormSubmit } = this.props;
 
     return (
       <>
-      <div className="CreateComment">
-        <form onSubmit={event => handleFormSubmit(event, value)}>
-          <textarea className="CreateComment__input" onChange={this.handleChange} value={value} rows="5" />
-          <button className="CreateComment__submit-btn" type="submit">Написать консультанту</button>
-        </form>
-      </div>
+        <div className="CreateComment">
+          <form onSubmit={event => this.handleSubmit(event)}>
+            <textarea
+              className="CreateComment__input"
+              onChange={this.handleChange}
+              value={value}
+              rows="4"
+              onKeyDown={event => {
+                if (event.ctrlKey && event.keyCode === 13) {
+                  this.handleSubmit(event);
+                }
+              }}
+            />
+            <button 
+              className="CreateComment__submit-btn" 
+              type="submit">
+              Написать консультанту
+            </button>
+          </form>
+        </div>
       </>
     );
   }

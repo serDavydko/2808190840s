@@ -8,7 +8,7 @@ const Comment = ({ comment }) => {
   return (
     <>
       <div className="Comment">
-        <div >
+        <div>
           <span className="Comment__author"> {comment.author} </span>
           <span className="Comment__date">{parsedDate}</span>
         </div>
