@@ -63,9 +63,16 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-content: start;
+  vertical-align: top;
   margin-bottom: 4px;
-  p {
-    margin: 0;
+
+  &__counters {
+    display: flex;
+    align-items: start;
+    align-content: start;
+    vertical-align: bottom;
+    line-height: 16px;
   }
   &__headers {
     display: inline;
@@ -89,20 +96,28 @@ body {
 
 .like-count {
   font-size: 12px;
-  align-items: center;
+  position: relative;
+
   &::before {
-    content: url(/img/like.png);
+    content: url(https://serdavydko.github.io/2808190840s/img/like.png);
+    position: absolute;
+    left: -15px;
+    top: 2px;
     padding-right: 4px;
   }
 }
 
 .comment-count {
   font-size: 12px;
-  margin-left: 20px;
+  margin-left: 36px;
   align-items: center;
+  vertical-align: top;
+  position: relative;
   &::before {
-    content: url(/img/comment.png);
-    padding-right: 4px;
+    content: url(https://serdavydko.github.io/2808190840s/img/comment.png);
+    position: absolute;
+    left: -15px;
+    top: 2px;
   }
 }
 

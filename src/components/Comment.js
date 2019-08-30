@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import parseDate from "../functions/parseDate";
+import parseDate from '../functions/parseDate';
 
 const Comment = ({ comment }) => {
   const parsedDate = parseDate(comment.date);
@@ -9,7 +9,9 @@ const Comment = ({ comment }) => {
     <>
       <div className="Comment">
         <div>
-          <span className="Comment__author"> {comment.author} </span>
+          <span className="Comment__author">
+            {comment.author}
+          </span>
           <span className="Comment__date">{parsedDate}</span>
         </div>
 

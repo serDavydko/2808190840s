@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import CounsultantInfo from "./CounsultantInfo";
-import CommentsBlock from "./CommentsBlock";
-import CreateComment from "./CreateComment";
+import CounsultantInfo from './CounsultantInfo';
+import CommentsBlock from './CommentsBlock';
+import CreateComment from './CreateComment';
 
-import { messageData, consultantInfo } from "../API/sources";
+import { messageData, consultantInfo } from '../API/sources';
 
 class Widget extends React.Component {
   state = {
@@ -24,31 +24,33 @@ class Widget extends React.Component {
   }
 
   addComment = (value) => {
-    if (value !== "") {
+    if (value !== '') {
       const currentDate = new Date();
 
       this.setState(prevState => ({
         comments: [
           ...prevState.comments,
-          { author: "Ivan Ivanovich", date: currentDate, content: value }
+          { author: 'Ivan Ivanovich', date: currentDate, content: value },
         ],
-        commentsCount: prevState.commentsCount + 1
+        commentsCount: prevState.commentsCount + 1,
       }));
     }
   };
 
   render() {
-    const { comments, likesCount, commentsCount, person } = this.state;
+    const {
+      comments, likesCount, commentsCount, person,
+    } = this.state;
 
     return (
       <section className="Widget">
         <div className="Widget__main">
-        <CounsultantInfo person={person} />
-        <CommentsBlock
-          comments={comments}
-          likesCount={likesCount}
-          commentsCount={commentsCount}
-        />
+          <CounsultantInfo person={person} />
+          <CommentsBlock
+            comments={comments}
+            likesCount={likesCount}
+            commentsCount={commentsCount}
+          />
         </div>
         <CreateComment addComment={this.addComment} />
       </section>

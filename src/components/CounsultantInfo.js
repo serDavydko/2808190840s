@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
 
 const ConsultantInfo = (props) => {
-  const { name, position, status, photo } = props.person;
+  const {
+    name, position, status, photo,
+  } = props.person;
 
   return (
     <>
@@ -18,17 +20,17 @@ const ConsultantInfo = (props) => {
         </div>
 
         <div className="ConsultantInfo__statistics">
-          <table className ="ConsultantInfo__statistics-table">
+          <table className="ConsultantInfo__statistics-table">
             <tr className="headerRow">
               <th />
               <th className="header-icon">Услуг</th>
             </tr>
             <tr className="firstLine">
-              <td rowspan="3">
-                <div class="graph-cont">
-                  <div class="bar bar1">Ручное бронирование</div>
-                  <div class="bar bar2">Пакетные туры</div>
-                  <div class="bar bar3">Отели</div>
+              <td rowSpan="3">
+                <div className="graph-cont">
+                  <div className="bar bar1">Ручное бронирование</div>
+                  <div className="bar bar2">Пакетные туры</div>
+                  <div className="bar bar3">Отели</div>
                 </div>
               </td>
               <td className="col2 first-elem">11</td>
